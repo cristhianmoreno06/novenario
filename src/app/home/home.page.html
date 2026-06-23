@@ -1,0 +1,146 @@
+<!-- Top App Bar -->
+<header class="w-full top-0 sticky bg-surface z-50 border-b border-outline-variant/10">
+  <div class="flex items-center justify-between px-container-padding h-[64px] max-w-max-width mx-auto">
+    <button (click)="fetchTodayMeeting()" class="active:scale-95 transition-transform hover:opacity-80 text-primary flex items-center justify-center">
+      <span class="material-symbols-outlined" style="font-size: 32px;">arrow_back</span>
+    </button>
+    <h1 class="font-label-lg text-label-lg font-bold text-primary tracking-wide">REUNIÓN DE HOY</h1>
+    <div class="w-8"></div> <!-- Spacer for centering -->
+  </div>
+</header>
+
+@if (loading()) {
+  <!-- Skeleton Loading State -->
+  <main class="flex-grow flex flex-col items-center justify-center w-full max-w-max-width px-container-padding text-center py-stack-lg mx-auto">
+    <div class="w-full bg-surface-container-lowest rounded-xl p-8 empty-state-card text-center flex flex-col items-center animate-pulse">
+      <div class="w-32 h-32 bg-surface-container rounded-full mb-6"></div>
+      <div class="h-6 w-48 bg-surface-container rounded mb-4"></div>
+      <div class="h-4 w-64 bg-surface-container rounded mb-8"></div>
+      <div class="w-full h-[64px] bg-surface-container rounded-xl"></div>
+    </div>
+  </main>
+} @else if (error()) {
+  <!-- Error State -->
+  <main class="flex-grow flex flex-col items-center justify-center w-full max-w-max-width px-container-padding text-center py-stack-lg mx-auto">
+    <div class="w-full bg-surface-container-lowest rounded-xl p-8 empty-state-card text-center flex flex-col items-center">
+      <div class="mb-stack-md w-32 h-32 bg-error/10 text-error rounded-full flex items-center justify-center">
+        <span class="material-symbols-outlined !text-[64px]">error</span>
+      </div>
+      <div class="space-y-4 max-w-[320px]">
+        <h2 class="font-label-lg text-label-lg text-on-surface">Ocurrió un problema</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">{{ error() }}</p>
+      </div>
+      <div class="mt-stack-lg w-full">
+        <button (click)="fetchTodayMeeting()" class="w-full h-[64px] bg-primary text-on-primary font-bold text-[20px] rounded-xl shadow-lg active:scale-95 transition-all flex items-center justify-center gap-3">
+          <span class="material-symbols-outlined">refresh</span>
+          Reintentar
+        </button>
+      </div>
+    </div>
+  </main>
+} @else if (meeting(); as m) {
+  <!-- Active Meeting View (Reunión Disponible) -->
+  <main class="flex-grow flex flex-col items-center justify-center w-full max-w-max-width px-container-padding text-center py-stack-lg mx-auto">
+    <!-- Imagery Section (Minimal & Peaceful) -->
+    <div class="w-full mb-stack-md rounded-xl overflow-hidden soft-elevation">
+      <img class="w-full h-64 object-cover" 
+           alt="A serene and peaceful cinematic photography of a single lit candle on a clean wooden table." 
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnof5gRE0Fr19mwPUkK_IuALbQCOCVF9yQcMN_qxXOtj45YBwCFE4eJmHjnARHc29tVrD70-BtC3s7uabI_z_Vx8GsZ1-pwydEwrcmOdUBptOFWsRjncH5kN-zUFzd8F_yFLCP4qfyshFKIi6-FQQe57vrBXevKaO4RNknd5UQpRpoeNAR3WyB0-uo7HujeMV7bMK85FBFR_gFycDaCTQjmPAbkcSqefDvRY_LGXtg-ZhGatxIuFZRGnSG3QgRurnAs4lZofH97lt5">
+    </div>
+
+    <!-- Meeting Details -->
+    <div class="w-full flex flex-col gap-stack-sm mb-stack-lg">
+      <h2 class="font-headline-xl text-on-surface tracking-tight text-headline-lg">
+        {{ m.titulo }}
+      </h2>
+      <div class="flex flex-col items-center gap-1 text-secondary">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">calendar_today</span>
+          <span class="font-body-lg text-body-md">{{ formatDateInSpanish(m.fecha) }}</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary">schedule</span>
+          <span class="font-body-lg font-bold text-body-md">{{ formatTime12h(m.hora) }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="w-full space-y-stack-sm">
+      <button (click)="joinMeeting()" 
+              [disabled]="joining()"
+              class="w-full h-[72px] bg-primary text-on-primary rounded-xl font-headline-lg flex items-center justify-center gap-4 shadow-lg active:scale-95 transition-all duration-200 text-label-lg disabled:opacity-85">
+        @if (joining()) {
+          <svg class="animate-spin h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <span>CONECTANDO...</span>
+        } @else {
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+          <span>UNIRME A LA ORACIÓN</span>
+        }
+      </button>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-[80%] mx-auto">
+        Toque el botón azul para entrar a la sala de oración virtual.
+      </p>
+    </div>
+
+    <!-- Progress Indicator (Tactile Clarity) -->
+    @if (getNovenaDay(m.titulo); as day) {
+      <div class="w-full mt-stack-lg p-6 bg-surface-container-low rounded-xl border border-outline-variant/30">
+        <div class="flex justify-between items-center mb-4">
+          <span class="font-label-lg text-label-lg text-on-surface">Progreso del Novenario</span>
+          <span class="font-label-lg text-label-lg text-primary">Día {{ day }} de 9</span>
+        </div>
+        <div class="w-full bg-surface-container-highest h-4 rounded-full overflow-hidden">
+          <div class="bg-primary h-full transition-all duration-1000 ease-out" 
+               [style.width.%]="(day / 9) * 100"></div>
+        </div>
+      </div>
+    }
+  </main>
+  
+  <!-- Bottom Margin for accessibility spacing -->
+  <div class="h-stack-lg"></div>
+} @else {
+  <!-- No Meeting View (Sin Reunión Programada) -->
+  <main class="flex-grow flex flex-col items-center justify-center px-container-padding max-w-max-width mx-auto w-full py-stack-lg">
+    <!-- Tactile Empty State Container -->
+    <div class="w-full bg-surface-container-lowest rounded-xl p-8 empty-state-card text-center flex flex-col items-center">
+      <!-- Illustrative Element (Atmospheric & Tactile) -->
+      <div class="mb-stack-md relative h-48 w-48 flex items-center justify-center">
+        <div class="absolute inset-0 bg-primary-container opacity-5 rounded-full blur-3xl scale-150"></div>
+        <div class="relative w-32 h-32 bg-surface-container rounded-full flex items-center justify-center text-primary-container">
+          <span class="material-symbols-outlined !text-[64px]" style="font-variation-settings: 'wght' 300;">event_busy</span>
+        </div>
+      </div>
+
+      <!-- Core Message -->
+      <div class="space-y-4 max-w-[320px]">
+        <h2 class="font-label-lg text-label-lg text-on-surface">Paz para su día</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          No hay reuniones programadas para hoy.
+        </p>
+      </div>
+
+      <!-- Action Area (Maintaining Flow) -->
+      <div class="mt-stack-lg w-full">
+        <p class="font-label-lg text-label-lg text-secondary mb-4 italic">
+          Un momento de silencio es también una oración.
+        </p>
+        <button (click)="fetchTodayMeeting()" class="w-full h-[64px] bg-primary text-on-primary font-bold text-[20px] rounded-xl shadow-lg active:scale-95 transition-all flex items-center justify-center gap-3">
+          <span class="material-symbols-outlined">refresh</span>
+          Buscar de nuevo
+        </button>
+      </div>
+    </div>
+
+    <!-- Secondary Affirmation -->
+    <div class="mt-stack-md text-center">
+      <p class="font-body-md text-body-md text-secondary opacity-60">
+        Le avisaremos cuando comience la próxima reunión.
+      </p>
+    </div>
+  </main>
+}

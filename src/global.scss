@@ -1,0 +1,96 @@
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/* Tailwind CSS v4 */
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #004ac6;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #2563eb;
+  --color-on-primary-container: #eeefff;
+  --color-surface: #faf8ff;
+  --color-on-surface: #131b2e;
+  --color-on-surface-variant: #434655;
+  --color-surface-container: #eaedff;
+  --color-surface-container-low: #f2f3ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #e2e7ff;
+  --color-surface-container-highest: #dae2fd;
+  --color-surface-bright: #faf8ff;
+  --color-surface-dim: #d2d9f4;
+  --color-outline: #737686;
+  --color-outline-variant: #c3c6d7;
+  --color-secondary: #5c5f61;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #e0e3e5;
+  --color-on-secondary-container: #626567;
+  --color-tertiary: #943700;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #bc4800;
+  --color-on-tertiary-container: #ffede6;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-background: #faf8ff;
+  --color-on-background: #131b2e;
+  --color-surface-variant: #dae2fd;
+
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+
+  --spacing-stack-sm: 1rem;
+  --spacing-container-padding: 1.5rem;
+  --spacing-stack-lg: 3rem;
+  --spacing-stack-md: 2rem;
+  --spacing-max-width: 600px;
+
+  --font-headline-lg: 'Inter', sans-serif;
+  --font-headline-lg-mobile: 'Inter', sans-serif;
+  --font-headline-xl: 'Inter', sans-serif;
+  --font-label-lg: 'Inter', sans-serif;
+  --font-body-md: 'Inter', sans-serif;
+  --font-body-lg: 'Inter', sans-serif;
+
+  --font-size-headline-lg: 26px;
+  --font-size-headline-lg-mobile: 24px;
+  --font-size-headline-xl: 32px;
+  --font-size-label-lg: 18px;
+  --font-size-body-md: 18px;
+  --font-size-body-lg: 20px;
+}
+
+/* Custom CSS classes from Stitch */
+body {
+  background-color: #faf8ff;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+.soft-elevation {
+  box-shadow: 0 12px 48px -12px rgba(19, 27, 46, 0.12);
+}
+
+.empty-state-card {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.05);
+}
