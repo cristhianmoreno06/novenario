@@ -1,0 +1,111 @@
+{
+  "configVersion": 1,
+  "timestamp": 1782183416056,
+  "index": "/Novenario/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/Novenario/chunk-2NIBOUWM.js",
+        "/Novenario/chunk-3IKVLSET.js",
+        "/Novenario/chunk-4YAHTQKD.js",
+        "/Novenario/chunk-77U2OHAJ.js",
+        "/Novenario/chunk-7RBFDYG4.js",
+        "/Novenario/chunk-ACKELEN3.js",
+        "/Novenario/chunk-BKAW6FQI.js",
+        "/Novenario/chunk-BUAYXDFD.js",
+        "/Novenario/chunk-DZMWEUH2.js",
+        "/Novenario/chunk-EUWLS5GI.js",
+        "/Novenario/chunk-GJQBOIMD.js",
+        "/Novenario/chunk-HPLGVK6K.js",
+        "/Novenario/chunk-I547WOKC.js",
+        "/Novenario/chunk-LDT5MBSS.js",
+        "/Novenario/chunk-LHXFR5BC.js",
+        "/Novenario/chunk-MEECNEAN.js",
+        "/Novenario/chunk-NMFL75IO.js",
+        "/Novenario/chunk-OZENF2N2.js",
+        "/Novenario/chunk-PZI2UQCW.js",
+        "/Novenario/chunk-U63LT5A2.js",
+        "/Novenario/chunk-V75MLQKS.js",
+        "/Novenario/chunk-X7ZIB3DC.js",
+        "/Novenario/chunk-YJ5TA4PT.js",
+        "/Novenario/chunk-YVTBFI2B.js",
+        "/Novenario/index.html",
+        "/Novenario/main-P3YW4ODW.js",
+        "/Novenario/polyfills-TDCRLYKL.js",
+        "/Novenario/styles-7EHGKEB6.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/Novenario/assets/icon/favicon.png",
+        "/Novenario/assets/shapes.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/Novenario/assets/icon/favicon.png": "7798b8e0eb61d7375c245af78bbf5c916932bf13",
+    "/Novenario/assets/shapes.svg": "5413e95adabcb2cb639970051f55e0ddb64ace53",
+    "/Novenario/chunk-2NIBOUWM.js": "f16eb48e9f2ef011e2b4266be3596d112cabd53d",
+    "/Novenario/chunk-3IKVLSET.js": "c517872121675b6eeb5919dc56e468bb53922a4d",
+    "/Novenario/chunk-4YAHTQKD.js": "69cd5b57c5635499ae421770945af060677b5540",
+    "/Novenario/chunk-77U2OHAJ.js": "e633d292f5de5dc92fee5cc8be31051351195b6b",
+    "/Novenario/chunk-7RBFDYG4.js": "4bdda88ce46579a4d54b72cb4a48a898064c90f3",
+    "/Novenario/chunk-ACKELEN3.js": "b17e175d65a322e6bd558769190fe4c33d121b71",
+    "/Novenario/chunk-BKAW6FQI.js": "2201a01ed9f26e3180e2bfd0c527a7c694520509",
+    "/Novenario/chunk-BUAYXDFD.js": "3f65ff036fdbc60ba96095bc855b8ac2a25812f2",
+    "/Novenario/chunk-DZMWEUH2.js": "24e47543f5b6407a7a11466d840c834ade586374",
+    "/Novenario/chunk-EUWLS5GI.js": "0f64c0005089875e4e9dbbb8136d414ccef2525b",
+    "/Novenario/chunk-GJQBOIMD.js": "111435891e52f5be1ce7e8fda0c6ebb5ed1e0082",
+    "/Novenario/chunk-HPLGVK6K.js": "4afa208e7a0cfc4fc8f86917841a474587369f1c",
+    "/Novenario/chunk-I547WOKC.js": "92261aefdb83402ebba27fbaefdf4427960a73b5",
+    "/Novenario/chunk-LDT5MBSS.js": "e208dd44594cd06448e1416b79635524c6574194",
+    "/Novenario/chunk-LHXFR5BC.js": "7b3a05fc5a7ead6aff4cb6aaebcad48cdaf31df1",
+    "/Novenario/chunk-MEECNEAN.js": "f29252a0e9a844094e0aa569e0fcd948eab72fac",
+    "/Novenario/chunk-NMFL75IO.js": "474d4da78c6df98c5979a2dab41ed174f171cc39",
+    "/Novenario/chunk-OZENF2N2.js": "b566af5267dad8d4a7913c34e6bab9bc58552a72",
+    "/Novenario/chunk-PZI2UQCW.js": "ff4e0e2d58f1f41f2154b4f7d11b27d691d86e00",
+    "/Novenario/chunk-U63LT5A2.js": "f75fa8ca44061f6c05dba0400875ba929ad3b10f",
+    "/Novenario/chunk-V75MLQKS.js": "74af3eb553534cfc11529e0cf93d625aa48787ab",
+    "/Novenario/chunk-X7ZIB3DC.js": "2114b894c8245ca5de54769d6348aea7c96fbf95",
+    "/Novenario/chunk-YJ5TA4PT.js": "3588f144b673886efc030c76678ca4feee860e22",
+    "/Novenario/chunk-YVTBFI2B.js": "3feaef34a5ba46b259922cfa7f61c3e4b2c25596",
+    "/Novenario/index.html": "68ec646a2cd0649b4ddfcc7fc97b6d7eb243c984",
+    "/Novenario/main-P3YW4ODW.js": "73e7950149ac533dc801952d4b13662e72545403",
+    "/Novenario/polyfills-TDCRLYKL.js": "454f6db4230cc7ab61b24fe465dcc92bf041737d",
+    "/Novenario/styles-7EHGKEB6.css": "a1bb994f526ec1b5e51f715cd0012f994dcc19ef"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
