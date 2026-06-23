@@ -21,16 +21,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: npm
 
       - name: Install Dependencies
         run: npm install
 
       - name: Build Application
-        run: npx ng build --configuration production --base-href /Novenario/
+        run: npx ng build --configuration production --base-href=/novenario/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: www
+          folder: dist/app/browser
           branch: gh-pages
